@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<qnx xmlns="http://www.qnx.com/schemas/application/1.0">
+    <id>com.nemory.instantstreetview</id>
+    <name>Super Street View</name>
+    
+    <env var="CASCADES_THEME" value="dark"/>
+   
+    <versionNumber>1.0</versionNumber>
+
+    <buildId>1</buildId>
+             
+
+    <author>Nemory Development Studios</author>
+    <splashScreens>
+       <image>splashQ10.jpg</image>
+       <image>splashZ10.jpg</image>
+    </splashScreens>
+    <icon>
+       <image>icon.png</image>
+    </icon>
+    <description>Sample</description>
+    
+    <!--  Unique author ID assigned by signing authority. Required if using debug tokens. -->
+    <!-- <authorId>ABC1234YjsnUk235h</authorId> -->
+   
+    <initialWindow>
+        <autoOrients>true</autoOrients>
+        <systemChrome>none</systemChrome>
+        <transparent>false</transparent>
+    </initialWindow>
+    
+    <!--  The category where the application appears. Either core.games or core.media. -->
+    <configuration name="Device-Debug">
+       <platformArchitecture>armle-v7</platformArchitecture>
+       <asset path="arm/o.le-v7-g/AppForSpotify" entry="true" type="Qnx/Elf">AppForSpotify</asset>
+    </configuration>
+    <configuration name="Device-Release">
+       <entryPointType>Qnx/Cascades</entryPointType>
+       <platformArchitecture>armle-v7</platformArchitecture>
+       <asset path="arm/o.le-v7/AppForSpotify.so" entry="true" type="Qnx/Elf">AppForSpotify.so</asset>
+    </configuration>
+    <configuration name="Device-Profile">
+       <platformArchitecture>armle-v7</platformArchitecture>
+       <asset path="arm-p/o.le-v7-g/AppForSpotify" entry="true" type="Qnx/Elf">AppForSpotify</asset>
+    </configuration>
+    <configuration name="Simulator-Debug">
+       <platformArchitecture>x86</platformArchitecture>
+       <asset path="x86/o-g/AppForSpotify" entry="true" type="Qnx/Elf">AppForSpotify</asset>
+    </configuration>
+    
+    <!--  The icon for the application, which should be 114x114. -->
+
+    <asset path="assets">assets</asset>
+    
+    <!-- Locale support -->
+    <asset path="translations" dest="qm">
+        <include name="*.qm"/>
+    </asset>
+    <asset path="assets/images/icon.png">icon.png</asset>
+    <asset path="assets/images/splashQ10.jpg">splashQ10.jpg</asset>
+    <asset path="assets/images/splashZ10.jpg">splashZ10.jpg</asset>
+    
+    <!-- Request permission to execute native code.  Required for native applications. -->
+    <permission system="true">run_native</permission>
+    <env var="LD_LIBRARY_PATH" value="app/native/lib:/usr/lib/qt4/lib"/>
+
+</qnx>
